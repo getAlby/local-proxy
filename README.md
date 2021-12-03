@@ -7,6 +7,11 @@ this little proxy application helps you.
 * Enter your node details (host e.g. http://youronionurl.onion:9090)
 * Configure Alby to connect to localhost:8181 (or whatever port you used)
 
+## NOTE!
+
+Please know that this opens a http server listening on localhost. Other apps could also try to connect to it.  
+
+
 ## Live Development
 
 To run in live development mode, run `wails dev` in the project directory. The frontend dev server will run
