@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <title>Alby bridge</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+
+<body data-wails-drag>
+  <div class="logo"></div>
+  <div class="result" id="result"></div>
+  <div class="input-box" data-wails-no-drag>
+    <label>Host:</label>
+    <input class="input" id="address" placeholder="http://" type="text" autocomplete="off">
+  </div>
+  <div class="input-box" data-wails-no-drag>
+    <label>Cert:</label>
+    <textarea class="input" id="cert" type="text" autocomplete="off"></textarea>
+  </div>
+  <div class="input-box" data-wails-no-drag>
+    <label>Local port:</label>
+    <input class="input" id="port" type="text" value="8181" autocomplete="off">
+  </div>
+  <div class="input-box">
+    <button class="btn" id="send">Start proxy</button>
+  </div>
+
+  <script src="/main.js"></script>
+</body>
+
+</html>
