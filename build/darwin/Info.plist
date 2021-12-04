@@ -1,7 +1,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
 	<key>CFBundlePackageType</key><string>APPL</string>
-	<key>CFBundleName</key><string>alby-bridge</string>
+	<key>CFBundleName</key><string>Alby</string>
 	<key>CFBundleExecutable</key><string>alby-bridge</string>
 	<key>CFBundleIdentifier</key><string>com.wails.alby-bridge</string>
 	<key>CFBundleVersion</key><string>1.0.0</string>
@@ -10,5 +10,5 @@
 	<key>CFBundleIconFile</key><string>iconfile</string>
 	<key>LSMinimumSystemVersion</key><string>10.13.0</string>
 	<key>NSHighResolutionCapable</key><string>true</string>
-	<key>NSHumanReadableCopyright</key><string>Copyright getalby.comstring>
+	<key>NSHumanReadableCopyright</key><string>Copyright getalby.com<string>
 </dict></plist>
