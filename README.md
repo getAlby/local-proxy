@@ -1,4 +1,4 @@
-# Alby Proxy
+# Alby Companion
 
 If you have problems connecting Alby to your node (for example because your node is behind TOR)
 this little proxy application helps you.
