@@ -98,7 +98,7 @@ func main() {
 	fmt.Printf("Proxy running. Connect Alby to: http://localhost:%s/%s\n", *port, *secret)
 	if err := proxy.ListenAndServe(); err != http.ErrServerClosed {
 		// TODO: report back to the frontend
-		fmt.Printf("Could not listen on %s: %v", port, err)
+		fmt.Printf("Could not listen on %s: %v", *port, err)
 	}
 
 }
