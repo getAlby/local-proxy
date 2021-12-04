@@ -7,9 +7,15 @@ this little proxy application helps you.
 * Enter your node details (host e.g. http://youronionurl.onion:9090)
 * Configure Alby to connect to localhost:8181 (or whatever port you used)
 
+
+## Installation
+
+You can download an executable from the [release assets](https://github.com/getAlby/local-proxy/releases)
+
+
 ## NOTE!
 
-Please know that this opens a http server listening on localhost. Other apps could also try to connect to it.  
+Please know that this opens a http server listening on localhost. Other apps could also try to connect to it. To secure the Proxy we use a custom "secret" behind which the proxy runs. 
 
 
 ## Live Development
