@@ -21,3 +21,6 @@ on http://localhost:34115. Open this in your browser to connect to your applicat
 
 For a production build, use `wails build`.
 
+
+## Screenshot
+![screenshot](https://user-images.githubusercontent.com/318/144708994-afeea78d-57d9-40b3-a5e3-077ff90fafd8.png)
