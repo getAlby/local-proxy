@@ -23,4 +23,5 @@ For a production build, use `wails build`.
 
 
 ## Screenshot
-![screenshot](https://user-images.githubusercontent.com/318/144708994-afeea78d-57d9-40b3-a5e3-077ff90fafd8.png)
+![screenshot](https://user-images.githubusercontent.com/318/144709052-9105cf80-02e9-42b8-a934-666e6d5babcc.png)
+
