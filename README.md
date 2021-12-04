@@ -17,6 +17,9 @@ You can download an executable from the [release assets](https://github.com/getA
 
 Please know that this opens a http server listening on localhost. Other apps could also try to connect to it. To secure the Proxy we use a custom "secret" behind which the proxy runs. 
 
+## TOR
+
+If you enter a `.onion` URL make sure you have a Tor socks proxy running on `127.0.0.1:9150`. All traffic will be sent through this Tor proxy.
 
 ## Live Development
 
