@@ -3,6 +3,7 @@ document.getElementById("address").focus();
 document.getElementById('address').value = localStorage.getItem('address');
 document.getElementById('cert').value = localStorage.getItem('cert');
 document.getElementById('port').value = localStorage.getItem('port') || '8181';
+document.getElementById('secret').value = localStorage.getItem('secret') || Math.random().toString(20).substr(2, 10);
 
 document.getElementById("send").addEventListener("click", function (e) {
   e.preventDefault();
@@ -23,11 +24,13 @@ window.StartProxy = function () {
   const address = document.getElementById('address').value;
   const cert = document.getElementById('cert').value;
   const port = document.getElementById('port').value;
+  const secret = document.getElementById('secret').value;
   localStorage.setItem('address', address);
   localStorage.setItem('cert', cert);
   localStorage.setItem('port', port);
+  localStorage.setItem('secret', secret);
 
-  window.go.main.App.StartProxy(address, cert, port).then((result) => {
+  window.go.main.App.StartProxy(address, secret, cert, port).then((result) => {
     document.getElementById("result").innerText = result;
     document.getElementById("send").innerText = "Stop";
   });

@@ -3,7 +3,7 @@ package main
 import (
 	"strings"
 	"context"
-	// "fmt"
+	"fmt"
 	"crypto/tls"
 	"crypto/x509"
 	"net/http"
@@ -46,7 +46,7 @@ func (b *App) shutdown(ctx context.Context) {
 	}
 }
 
-func (b *App) StartProxy(address string, cert string, port string) (string, error) {
+func (b *App) StartProxy(address string, secret string, cert string, port string) (string, error) {
 	// runtime.LogInfo(b.ctx, fmt.Sprintf("Starting Proxy Server for %s", address))
 	remoteUrl, err := url.Parse(address)
 	if (err != nil) {
@@ -95,9 +95,17 @@ func (b *App) StartProxy(address string, cert string, port string) (string, erro
 	}
 	proxyHandler := func(w http.ResponseWriter, r *http.Request) {
 		// runtime.LogInfo(b.ctx, fmt.Sprintf("%s, %q", r.Method, r.URL.Path))
+		r.Host = remoteUrl.Host
+		// remove secret form the URL
+		r.URL.Path = strings.Replace(r.URL.Path, secret + "/", "", 1)
+
 		reverseProxy.ServeHTTP(w, r)
 	}
-	http.HandleFunc("/", proxyHandler)
+	path := "/"
+	if secret != "" {
+		path = path + secret + "/"
+	}
+	http.HandleFunc(path , proxyHandler)
 	b.proxy = &http.Server{Addr: "0.0.0.0:" + port}
 
 	go func() {
@@ -108,5 +116,5 @@ func (b *App) StartProxy(address string, cert string, port string) (string, erro
 		}
 	}()
 
-	return "Proxy active", nil // TODO: error handling
+	return fmt.Sprintf("Proxy running. Connect Alby to: http://localhost:%s/%s", port, secret), nil // TODO: error handling
 }

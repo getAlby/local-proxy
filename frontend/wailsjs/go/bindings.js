@@ -9,10 +9,11 @@ const go = {
        * @param {string} arg1 - Go Type: string
        * @param {string} arg2 - Go Type: string
        * @param {string} arg3 - Go Type: string
+       * @param {string} arg4 - Go Type: string
        * @returns {Promise<string|Error>}  - Go Type: string
        */
-      "StartProxy": (arg1, arg2, arg3) => {
-        return window.go.main.App.StartProxy(arg1, arg2, arg3);
+      "StartProxy": (arg1, arg2, arg3, arg4) => {
+        return window.go.main.App.StartProxy(arg1, arg2, arg3, arg4);
       },
     },
   },
