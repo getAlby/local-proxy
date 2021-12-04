@@ -4,6 +4,7 @@ import (
 	"strings"
 	"context"
 	"fmt"
+	"encoding/base64"
 	"crypto/tls"
 	"crypto/x509"
 	"net/http"
@@ -83,8 +84,18 @@ func (b *App) StartProxy(address string, secret string, cert string, port string
 	} else {
 		if cert != "" {
 			// runtime.LogInfo(b.ctx, "Setting certificate")
+			certDER, err := base64.RawURLEncoding.DecodeString(cert)
+			if err != nil {
+				panic(err)
+			}
+			//certPool := x509.NewCertPool()
+			//certPool.AppendCertsFromPEM([]byte(cert))
 			certPool := x509.NewCertPool()
-			certPool.AppendCertsFromPEM([]byte(cert))
+			certObj, err := x509.ParseCertificate(certDER)
+			if err != nil {
+				panic(err)
+			}
+			certPool.AddCert(certObj)
 
 			reverseProxy.Transport = &http.Transport{
 				TLSClientConfig: &tls.Config{
