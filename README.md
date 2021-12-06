@@ -10,7 +10,18 @@ this little proxy application helps you.
 
 ## Installation
 
-You can download an executable from the [release assets](https://github.com/getAlby/local-proxy/releases)
+You can download an executable from the [release assets](https://github.com/getAlby/local-proxy/releases) (Currently OSX only)
+
+Or Build it yourself:
+
+```
+$ git clone git@github.com:getAlby/local-proxy.git
+$ cd local-proxy
+$ go install github.com/wailsapp/wails/v2/cmd/wails@latest
+$ go install
+$ wails build -clean
+// now open the app from the build folder
+```
 
 
 ## NOTE!
